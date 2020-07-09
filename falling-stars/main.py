@@ -22,6 +22,9 @@ class Cart(ppb.Sprite):
         elif key_event.key is keycodes.Right:
             self.speed = 4
             self.direction = UnitDirection.RIGHT
+        elif key_event.key is keycodes.Space:
+            self.speed = 0
+            self.direction = UnitDirection.NONE
         else:
             pass
 

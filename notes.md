@@ -22,7 +22,7 @@ Let's focus on the second warning:
 
 ------
 
-Save this (https://pngtree.com/so/construction-production)[construction-production png from pngtree.com] as cart.png in your project folder, and run `main.py` again.
+Save this [construction-production png from pngtree-dot-com](https://pngtree.com/so/construction-production) as cart.png in your project folder, and run `main.py` again.
 
 Yaaaay!
 
@@ -45,5 +45,17 @@ When you run the script, the cart starts stationary on the window. Set it into m
 Notice that you only need to press once for it to move in that direction.
 
 Also notice that there's no way to bring it to a stop.
+
+------
+
+# Solving the Halting Problem
+
+Well, a different kind of halting problem than [the one computer scientists have been grappling with for ages](https://en.wikipedia.org/wiki/Halting_problem#:~:text=In%20computability%20theory%2C%20the%20halting,or%20continue%20to%20run%20forever.)
+
+We want to halt the motion whenever the space bar is pressed, and this is what we'll do on that key press:
+* Set the speed to zero
+* Set the direction to a zero vector
+
+Now, pressing the space bar brings halts the cart. Awesome!
 
 ------
