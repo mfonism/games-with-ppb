@@ -83,3 +83,11 @@ Let's upgrade our sprite to a rectangle sprite for that.
 * Let the Cart class inherit from the RectangleSprite class
 * Clear the size of the cart and set a height instead -- the width will be automatically calculated
 * On each update, check for collision with the sides of the viewport, and set direction so that cart bounces back
+
+------
+
+# A Star is Born
+
+* Create a Star class which inherits from Sprite class
+* It will be moving from top to bottom, so position it at the top of the viewport, and give it a downwards direction vector
+* On each repainting of the window, the star should move downwards
