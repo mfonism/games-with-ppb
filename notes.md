@@ -101,3 +101,23 @@ We don't really need to use init() in the Cart class. Like in the Star class, we
 Then we make sure we instantiate carts without arguments so that the defaults hold.
 
 ------
+
+# Re: A Star is Born
+
+Did you notice we got a coloured placeholder square as the visual representation of our sprite.
+
+If you run the script again and look at the terminal, you'll see a warning like one we've seen before:
+
+```
+...
+
+WARNING:ppb.assetlib:File not found: 'star.png'
+```
+
+Let's give it a star.png file so it can do its thing.
+
+------
+
+Save this [star-clipart png from pngtree-dot-com](https://pngtree.com/so/star-clipart) as star.png in your project folder, and run `main.py` again.
+
+Go celebrate yourself!
