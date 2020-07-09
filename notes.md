@@ -71,3 +71,15 @@ Excellent.
 How about we position the cart on a horizontal plane very close to the bottom of the window? At the moment, it is too vertically centred.
 
 ------
+
+# Respecting Boundaries
+
+We don't want our cart leaving the viewport on either side. We have to set boundaries and make sure it respects them.
+
+We'll need to know the coordinates of the far-right and far-left sides of our sprite, so we can detect when they collide with the far-right and far-left sides of the viewport.
+
+Let's upgrade our sprite to a rectangle sprite for that.
+
+* Let the Cart class inherit from the RectangleSprite class
+* Clear the size of the cart and set a height instead -- the width will be automatically calculated
+* On each update, check for collision with the sides of the viewport, and set direction so that cart bounces back

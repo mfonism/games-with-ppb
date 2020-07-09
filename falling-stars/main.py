@@ -11,13 +11,18 @@ class UnitDirection:
 class Cart(ppb.Sprite):
     speed = 0
     direction = UnitDirection.NONE
-    size = 2.5
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.height = 2.5
         self.position = ppb.Vector(0, -8)
 
     def on_update(self, update_event, signal):
+        viewport = update_event.scene.main_camera
+        if self.left <= viewport.left:
+            self.direction = UnitDirection.RIGHT
+        elif self.right >= viewport.right:
+            self.direction = UnitDirection.LEFT
         self.position += self.speed * update_event.time_delta * self.direction
 
     def on_key_pressed(self, key_event, signal):
