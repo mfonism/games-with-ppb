@@ -13,6 +13,10 @@ class Cart(ppb.Sprite):
     direction = UnitDirection.NONE
     size = 2.5
 
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.position = ppb.Vector(0, -8)
+
     def on_update(self, update_event, signal):
         self.position += self.speed * update_event.time_delta * self.direction
 

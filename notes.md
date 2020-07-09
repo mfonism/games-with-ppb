@@ -67,3 +67,7 @@ Our cart is too small. Let's resize it.
 Excellent.
 
 ------
+
+How about we position the cart on a horizontal plane very close to the bottom of the window? At the moment, it is too vertically centred.
+
+------
