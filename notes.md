@@ -91,3 +91,13 @@ Let's upgrade our sprite to a rectangle sprite for that.
 * Create a Star class which inherits from Sprite class
 * It will be moving from top to bottom, so position it at the top of the viewport, and give it a downwards direction vector
 * On each repainting of the window, the star should move downwards
+
+------
+
+## Aside
+
+We don't really need to use init() in the Cart class. Like in the Star class, we can set all those things as class variables.
+
+Then we make sure we instantiate carts without arguments so that the defaults hold.
+
+------

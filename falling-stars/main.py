@@ -10,13 +10,10 @@ class UnitDirection:
 
 
 class Cart(ppb.Sprite):
+    position = ppb.Vector(0, -8)
+    height = 2.5
     speed = 0
     direction = UnitDirection.NONE
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self.height = 2.5
-        self.position = ppb.Vector(0, -8)
 
     def on_update(self, update_event, signal):
         viewport = update_event.scene.main_camera
@@ -50,7 +47,7 @@ class Star(ppb.Sprite):
 
 
 def setup(scene):
-    scene.add(Cart(pos=(0, 0)))
+    scene.add(Cart())
     scene.add(Star())
 
 
