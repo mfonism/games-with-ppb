@@ -29,3 +29,21 @@ Yaaaay!
 Works like a charm.
 
 ------
+
+# Let's get a movin'
+
+We want to move in a certain direction with a certain speed. So, we need speed and direction.
+
+* Set initial speed to 0
+* Set initial direction to a zero vector
+
+* When a direction key (left or right) is pressed, give it a non-zero speed, and set its direction appropriately
+* `on_update` will handle the positioning on window repaint
+
+When you run the script, the cart starts stationary on the window. Set it into motion with your direction keys.
+
+Notice that you only need to press once for it to move in that direction.
+
+Also notice that there's no way to bring it to a stop.
+
+------
