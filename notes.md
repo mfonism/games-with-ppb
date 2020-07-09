@@ -19,3 +19,13 @@ WARNING:ppb.assetlib:File not found: 'cart.png'
 
 Let's focus on the second warning:
 * Says it can't find a cart.png file. Let's give it one, and see what it does with it.
+
+------
+
+Save this (https://pngtree.com/so/construction-production)[construction-production png from pngtree.com] as cart.png in your project folder, and run `main.py` again.
+
+Yaaaay!
+
+Works like a charm.
+
+------
