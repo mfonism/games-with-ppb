@@ -59,3 +59,11 @@ We want to halt the motion whenever the space bar is pressed, and this is what w
 Now, pressing the space bar brings halts the cart. Awesome!
 
 ------
+
+# Scaling Up
+
+Our cart is too small. Let's resize it.
+
+Excellent.
+
+------

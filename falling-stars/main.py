@@ -11,6 +11,7 @@ class UnitDirection:
 class Cart(ppb.Sprite):
     speed = 0
     direction = UnitDirection.NONE
+    size = 2.5
 
     def on_update(self, update_event, signal):
         self.position += self.speed * update_event.time_delta * self.direction
