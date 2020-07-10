@@ -189,3 +189,15 @@ And while we're at it, let's clean up the code for updating the star.
     * If the center of the star is within the space between the far-left and far-rights of the cart, then the star is in the cart
 
 Recall that for now we're removing the star from the scene if it falls into the cart, and taking it to the top right corner of the viewport otherwise.
+
+------
+
+# Bring Back my PNGs
+
+Well, you heard the girl.
+
+Hurry, restore the original names of the png files for the cart and star.
+
+Play the game.
+
+------
