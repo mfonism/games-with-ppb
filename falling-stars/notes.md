@@ -241,3 +241,25 @@ Let's make them not come all at once.
 * Check whether a star is born before bothering to update it's position on screen update
 
 Now the stars fall one after the other.
+
+------
+
+# While I Take a Breather
+
+I'm so excited about what we've accomplished so far. This sh.. ain't easy, I tell you.
+
+If it were, Napoleon would have done it.
+
+I'm so proud of myself, you should be proud of yourself too.
+
+Now, I'm sure you've observed the stars are showing even when they are yet to be 'born'. They're just parked there up above the world so high.
+
+We should hide them outside the top of the viewport.
+
+Then also, we should slow the stars down a bit, or make the cart go faster. Or both.
+
+It's all too much for me. I need a breather.
+
+While I'm away, implement the suggestions I've just... well... suggested.
+
+------
