@@ -10,9 +10,10 @@ class UnitDirection:
     DOWN = ppb.Vector(0, -1)
 
 
-class Cart(ppb.Sprite):
+class Cart(ppb.RectangleSprite):
     position = ppb.Vector(0, -8)
-    height = 2.5
+    height = 2
+    width = 6
     speed = 0
     direction = UnitDirection.NONE
 
@@ -38,8 +39,10 @@ class Cart(ppb.Sprite):
             pass
 
 
-class Star(ppb.Sprite):
+class Star(ppb.RectangleSprite):
     position = ppb.Vector(0, 8)
+    height = 1
+    width = 1
     speed = 4
     direction = UnitDirection.DOWN
 

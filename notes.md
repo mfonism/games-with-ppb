@@ -154,8 +154,19 @@ We had just one job!
 
 In order to appreciate the problem at hand, rename your png files to something other than cart.png and star.png so that the game engine doesn't use them to represent the sprites.
 
-I renamed mine **cart_.png** and **start_.png** so I can easily revert them.
+I renamed mine **cart_.png** and **star_.png** so I can easily revert them.
 
 When you run the game now, you'll notice the images are gone. All you can see are coloured squares.
 
 And they are much smaller than the images made you think they were.
+
+------
+
+Let's be explicit about the dimensions of our cart and star, shall we!
+
+* Make both sprite classes inherit from `RectangleSprite` (instead of `Sprite`) so we can set rectangular dimensions on them
+* Set class variables `height` and `width` on each sprite class
+  + Make the cart 2 units high and 6 units wide
+  + Make the star 1 unit high and 1 unit wide (what shape is that, though?)
+
+------
