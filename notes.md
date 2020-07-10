@@ -121,3 +121,17 @@ Let's give it a star.png file so it can do its thing.
 Save this [star-clipart png from pngtree-dot-com](https://pngtree.com/so/star-clipart) as star.png in your project folder, and run `main.py` again.
 
 Go celebrate yourself!
+
+------
+
+# In or Out -- Brace Up for This
+
+Now we're going to detect when the star gets into the cart.
+
+* If the bottom of the star is above the top of the cart, then it should keep falling
+* Other wise, we have to check whether any part of the star overlaps a part of the cart
+  + If it does, then the star is in the cart
+
+For now, when we determine that the star is in the cart, we remove it from the scene.
+
+If it has fallen outside the cart, we move it to a position at the top right corner of the scene.

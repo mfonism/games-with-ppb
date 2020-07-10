@@ -6,6 +6,7 @@ class UnitDirection:
     NONE = ppb.Vector(0, 0)
     LEFT = ppb.Vector(-1, 0)
     RIGHT = ppb.Vector(1, 0)
+    UP = ppb.Vector(0, 1)
     DOWN = ppb.Vector(0, -1)
 
 
@@ -43,11 +44,26 @@ class Star(ppb.Sprite):
     direction = UnitDirection.DOWN
 
     def on_update(self, update_event, signal):
-        self.position += self.speed * update_event.time_delta * self.direction
+        cart = next(update_event.scene.get(kind=Cart, tags="cart"))
+        if self.bottom > cart.top:
+            self.position += self.speed * update_event.time_delta * self.direction
+            return
+        if (self.left > (cart.left - self.width)) and (
+            self.right < (cart.right + self.width)
+        ):
+            # Hoorah! Star in cart!!
+            update_event.scene.remove(self)
+        else:
+            # Oopsie! Missed that one!!
+            self.position = update_event.scene.main_camera.top_right - ppb.Vector(
+                self.size, self.size
+            )
+            self.speed = 0
+            self.direction = UnitDirection.NONE
 
 
 def setup(scene):
-    scene.add(Cart())
+    scene.add(Cart(), tags=["cart"])
     scene.add(Star())
 
 
