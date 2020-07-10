@@ -1,4 +1,5 @@
 import random
+import time
 
 import ppb
 from ppb import keycodes
@@ -42,6 +43,14 @@ class Cart(ppb.RectangleSprite):
 
 
 class Star(ppb.Sprite):
+    def __init__(self, key, perf_counter=None, **args):
+        super().__init__(**args)
+        self._key = key
+        self._perf_counter = perf_counter or time.perf_counter()
+
+    def is_born(self):
+        return time.perf_counter() - self._perf_counter >= self._key
+
     def on_scene_started(self, scene_event, signal):
         self.width = 1
         self.speed = 4
@@ -55,6 +64,10 @@ class Star(ppb.Sprite):
         self.position = ppb.Vector(rand_x, top)
 
     def on_update(self, update_event, signal):
+
+        if not self.is_born():
+            return
+
         self.position += self.speed * update_event.time_delta * self.direction
         cart = next(update_event.scene.get(kind=Cart, tags="cart"))
 
@@ -73,8 +86,9 @@ class Star(ppb.Sprite):
 
 def setup(scene):
     scene.add(Cart(), tags=["cart"])
-    for i in range(7):
-        scene.add(Star())
+    pc = time.perf_counter()
+    for i in range(1, 8):
+        scene.add(Star(key=i, perf_counter=pc))
 
 
 ppb.run(setup=setup)

@@ -228,3 +228,16 @@ Let's have seven. But what's a number if it isn't seven?
 * Use a for-loop to add seven stars to the scene (in the scene setup code)
 
 Wow. Such beauty!
+
+------
+
+The stars just be rushing us.
+
+Let's make them not come all at once.
+
+* Give every star an identifying number which will be used to determine just how long the individual star has to wait before being set into motion
+* When a star is instantiated, make it aware of some shared perf_counter
+* A star should not be 'born' unless the counter at the time of checking is greater than the shared perf_counter by the number of seconds determined from its key
+* Check whether a star is born before bothering to update it's position on screen update
+
+Now the stars fall one after the other.
