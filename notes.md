@@ -135,3 +135,27 @@ Now we're going to detect when the star gets into the cart.
 For now, when we determine that the star is in the cart, we remove it from the scene.
 
 If it has fallen outside the cart, we move it to a position at the top right corner of the scene.
+
+------
+
+If you play with it at this state long enough, you'll observe that sometimes you could swear your star has gone into the cart, but the game says otherwise.
+
+I'll confess, that totally took me unaware. Almost drove me nuts.
+
+The thing is, our images (cart.png and star.png) are larger than the actual size of the sprites they represent. And we didn't bother to resize them to fit the dimensions of our sprites. Matter of fact, we didn't even bother to set dimensions to our sprites!
+
+Phew...
+
+We had just one job!
+
+------
+
+# All of the Dimensions
+
+In order to appreciate the problem at hand, rename your png files to something other than cart.png and star.png so that the game engine doesn't use them to represent the sprites.
+
+I renamed mine **cart_.png** and **start_.png** so I can easily revert them.
+
+When you run the game now, you'll notice the images are gone. All you can see are coloured squares.
+
+And they are much smaller than the images made you think they were.
