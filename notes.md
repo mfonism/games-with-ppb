@@ -170,3 +170,22 @@ Let's be explicit about the dimensions of our cart and star, shall we!
   + Make the star 1 unit high and 1 unit wide (what shape is that, though?)
 
 ------
+
+# House Keeping
+
+The cart is as high as it is wide -- a square!
+
+So we don't really need to inherit from `RectangleSprite`. `Sprite` will do.
+
+And then, we don't need to set both height and width. Setting one will automatically set the other (because, square!)
+
+And while we're at it, let's clean up the code for updating the star.
+
+* Update the position of the star using its speed, its direction and the time elapsed since previous update
+* Get a hold of the cart
+* Check whether the star is in the cart:
+  + If the bottom of the star has not fallen below the top of the cart, then it should keep falling
+  + Otherwise halt the star for a moment
+    * If the center of the star is within the space between the far-left and far-rights of the cart, then the star is in the cart
+
+Recall that for now we're removing the star from the scene if it falls into the cart, and taking it to the top right corner of the viewport otherwise.

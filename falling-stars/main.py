@@ -39,30 +39,28 @@ class Cart(ppb.RectangleSprite):
             pass
 
 
-class Star(ppb.RectangleSprite):
+class Star(ppb.Sprite):
     position = ppb.Vector(0, 8)
-    height = 1
     width = 1
     speed = 4
     direction = UnitDirection.DOWN
+    count = 0
 
     def on_update(self, update_event, signal):
+        self.position += self.speed * update_event.time_delta * self.direction
         cart = next(update_event.scene.get(kind=Cart, tags="cart"))
+
         if self.bottom > cart.top:
-            self.position += self.speed * update_event.time_delta * self.direction
             return
-        if (self.left > (cart.left - self.width)) and (
-            self.right < (cart.right + self.width)
-        ):
-            # Hoorah! Star in cart!!
+
+        self.speed = 0
+        self.direction = UnitDirection.NONE
+        if cart.left <= self.position.x <= cart.right:
+            # Hoorah! Cart in box.
             update_event.scene.remove(self)
         else:
             # Oopsie! Missed that one!!
-            self.position = update_event.scene.main_camera.top_right - ppb.Vector(
-                self.size, self.size
-            )
-            self.speed = 0
-            self.direction = UnitDirection.NONE
+            self.position = update_event.scene.main_camera.top_right
 
 
 def setup(scene):
