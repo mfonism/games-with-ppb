@@ -1,3 +1,5 @@
+import random
+
 import ppb
 from ppb import keycodes
 
@@ -40,11 +42,17 @@ class Cart(ppb.RectangleSprite):
 
 
 class Star(ppb.Sprite):
-    position = ppb.Vector(0, 8)
-    width = 1
-    speed = 4
-    direction = UnitDirection.DOWN
-    count = 0
+    def on_scene_started(self, scene_event, signal):
+        self.width = 1
+        self.speed = 4
+        self.direction = UnitDirection.DOWN
+        far_left = scene_event.scene.main_camera.left
+        far_right = scene_event.scene.main_camera.right
+        top = scene_event.scene.main_camera.top
+        rand_x = random.randrange(
+            round(far_left + 2 * self.width), round(far_right + 1 - 2 * self.width)
+        )
+        self.position = ppb.Vector(rand_x, top)
 
     def on_update(self, update_event, signal):
         self.position += self.speed * update_event.time_delta * self.direction
@@ -65,7 +73,8 @@ class Star(ppb.Sprite):
 
 def setup(scene):
     scene.add(Cart(), tags=["cart"])
-    scene.add(Star())
+    for i in range(7):
+        scene.add(Star())
 
 
 ppb.run(setup=setup)

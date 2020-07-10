@@ -201,3 +201,30 @@ Hurry, restore the original names of the png files for the cart and star.
 Play the game.
 
 ------
+
+# You'll Never See it Coming
+
+At the moment, you can always guess that the star will be dropping from the middle of the top of the view port.
+
+Boring.
+
+How about we make it drop from some random position at the top of the view port!
+
+* Listen for the SceneStarted event in the star
+  + set the width, speed and direction for the star
+  + get a random point on the x-axis for the star
+  + anchor this point to the top of the viewport
+
+Now the star drops from random spots off of the top of the viewport.
+
+------
+
+# Can I Haz Moar Starrrrrrrz!
+
+Sure, one star falling from the sky is awesome. But guess what could be even more awesome, plenty of stars falling from the sky.
+
+Let's have seven. But what's a number if it isn't seven?
+
+* Use a for-loop to add seven stars to the scene (in the scene setup code)
+
+Wow. Such beauty!
