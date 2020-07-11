@@ -263,3 +263,9 @@ It's all too much for me. I need a breather.
 While I'm away, implement the suggestions I've just... well... suggested.
 
 ------
+
+I've played around with the suggestion, and I find that setting the cart speed at 8, the star speed at 3 and making successive stars to be born 1.5 seconds apart keeps the game interesting for me.
+
+Oh, and in the meantime, I've increased the number of stars to 13.
+
+------

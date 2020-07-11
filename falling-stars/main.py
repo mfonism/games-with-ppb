@@ -30,10 +30,10 @@ class Cart(ppb.RectangleSprite):
 
     def on_key_pressed(self, key_event, signal):
         if key_event.key is keycodes.Left:
-            self.speed = 4
+            self.speed = 8
             self.direction = UnitDirection.LEFT
         elif key_event.key is keycodes.Right:
-            self.speed = 4
+            self.speed = 8
             self.direction = UnitDirection.RIGHT
         elif key_event.key is keycodes.Space:
             self.speed = 0
@@ -53,7 +53,7 @@ class Star(ppb.Sprite):
 
     def on_scene_started(self, scene_event, signal):
         self.width = 1
-        self.speed = 4
+        self.speed = 3
         self.direction = UnitDirection.DOWN
         far_left = scene_event.scene.main_camera.left
         far_right = scene_event.scene.main_camera.right
@@ -61,7 +61,7 @@ class Star(ppb.Sprite):
         rand_x = random.randrange(
             round(far_left + 2 * self.width), round(far_right + 1 - 2 * self.width)
         )
-        self.position = ppb.Vector(rand_x, top)
+        self.position = ppb.Vector(rand_x, top + self.width)
 
     def on_update(self, update_event, signal):
 
@@ -87,8 +87,8 @@ class Star(ppb.Sprite):
 def setup(scene):
     scene.add(Cart(), tags=["cart"])
     pc = time.perf_counter()
-    for i in range(1, 8):
-        scene.add(Star(delay=i, perf_counter=pc))
+    for i in range(1, 14):
+        scene.add(Star(delay=i * 1.5, perf_counter=pc))
 
 
 ppb.run(setup=setup)
