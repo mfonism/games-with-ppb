@@ -55,6 +55,7 @@ class Star(ppb.Sprite):
         return time.perf_counter() - self._perf_counter >= self._delay
 
     def on_scene_started(self, scene_event, signal):
+        signal(ppb.events.PlaySound(ppb.Sound(name="intro.wav")))
         self.width = 1
         self.speed = 3
         self.direction = UnitDirection.DOWN
@@ -82,6 +83,7 @@ class Star(ppb.Sprite):
 
         if cart.left <= self.position.x <= cart.right:
             # Hoorah! Cart in box.
+            signal(ppb.events.PlaySound(ppb.Sound(name="ding.wav")))
             if self.__class__.last_caught is None:
                 self.top_right = update_event.scene.main_camera.top_right
             else:
@@ -90,6 +92,7 @@ class Star(ppb.Sprite):
             self.__class__.last_caught = self
         else:
             # Oopsie! Missed that one!!
+            signal(ppb.events.PlaySound(ppb.Sound(name="chord.wav")))
             self.image = ppb.Image(name="star--red.png")
             if self.__class__.last_missed is None:
                 self.top_left = update_event.scene.main_camera.top_left

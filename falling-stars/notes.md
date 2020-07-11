@@ -297,3 +297,11 @@ We'll show a red star on the left side of the screen for each star that falls ou
 We'll be setting [this red star clipart  from pngtree-dot-com](https://pngtree.com/so/hand-painted) as the image for each star (sprite) that falls outside the cart, so save a cropped version of that image as 'star--red.png' in your project file.
 
 ------
+
+# Sounds of Music
+
+* Play appropriate sound when scene is loaded
+* Play appropriate sound each time a star falls into the cart
+* Play appropriate sound each time a star falls outside cart
+
+------
