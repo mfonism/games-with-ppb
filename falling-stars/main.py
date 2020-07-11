@@ -43,13 +43,13 @@ class Cart(ppb.RectangleSprite):
 
 
 class Star(ppb.Sprite):
-    def __init__(self, key, perf_counter=None, **args):
+    def __init__(self, delay=0, perf_counter=None, **args):
         super().__init__(**args)
-        self._key = key
+        self._delay = delay
         self._perf_counter = perf_counter or time.perf_counter()
 
     def is_born(self):
-        return time.perf_counter() - self._perf_counter >= self._key
+        return time.perf_counter() - self._perf_counter >= self._delay
 
     def on_scene_started(self, scene_event, signal):
         self.width = 1
@@ -88,7 +88,7 @@ def setup(scene):
     scene.add(Cart(), tags=["cart"])
     pc = time.perf_counter()
     for i in range(1, 8):
-        scene.add(Star(key=i, perf_counter=pc))
+        scene.add(Star(delay=i, perf_counter=pc))
 
 
 ppb.run(setup=setup)
