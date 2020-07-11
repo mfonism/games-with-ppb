@@ -22,7 +22,7 @@ Let's focus on the second warning:
 
 ------
 
-Save this [construction-production png from pngtree-dot-com](https://pngtree.com/so/construction-production) as cart.png in your project folder, and run `main.py` again.
+Save a cropped version of this [cart from pngtree-dot-com](https://pngtree.com/so/construction-production) as cart.png in your project folder, and run `main.py` again.
 
 Yaaaay!
 
@@ -118,7 +118,7 @@ Let's give it a star.png file so it can do its thing.
 
 ------
 
-Save this [star-clipart png from pngtree-dot-com](https://pngtree.com/so/star-clipart) as star.png in your project folder, and run `main.py` again.
+Save a cropped version of this [star clipart from pngtree-dot-com](https://pngtree.com/so/star-clipart) as star.png in your project folder, and run `main.py` again.
 
 Go celebrate yourself!
 
@@ -278,7 +278,7 @@ Keep in mind that up to this moment we've pinned the stars that got away at the 
 
 All that is about to change.
 
-We will be making the stars that get away disappear, and pinning the ones we've caught to the left side of the screen.
+We will be making the stars that get away disappear, and pinning the ones we've caught to the right side of the screen.
 
 We're going to stack them one on the other, from the top of the viewport.
 
@@ -287,3 +287,13 @@ We're going to stack them one on the other, from the top of the viewport.
 We're setting the top-right corner of the first caught star to the top-right corner of the viewport.
 
 Then setting the top-right corner of each subsequent catch to the bottom-right corner of the previous catch.
+
+------
+
+# The Stars that Got Away
+
+We'll show a red star on the left side of the screen for each star that falls outside the cart.
+
+We'll be setting [this red star clipart  from pngtree-dot-com](https://pngtree.com/so/hand-painted) as the image for each star (sprite) that falls outside the cart, so save a cropped version of that image as 'star--red.png' in your project file.
+
+------
