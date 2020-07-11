@@ -43,6 +43,8 @@ class Cart(ppb.RectangleSprite):
 
 
 class Star(ppb.Sprite):
+    last_caught = None
+
     def __init__(self, delay=0, perf_counter=None, **args):
         super().__init__(**args)
         self._delay = delay
@@ -78,10 +80,16 @@ class Star(ppb.Sprite):
         self.direction = UnitDirection.NONE
         if cart.left <= self.position.x <= cart.right:
             # Hoorah! Cart in box.
-            update_event.scene.remove(self)
+            if self.__class__.last_caught is None:
+                self.top_right = update_event.scene.main_camera.top_right
+            else:
+                self.top_right = self.__class__.last_caught.bottom_right
+
+            self.__class__.last_caught = self
+
         else:
             # Oopsie! Missed that one!!
-            self.position = update_event.scene.main_camera.top_right
+            update_event.scene.remove(self)
 
 
 def setup(scene):

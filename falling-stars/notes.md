@@ -269,3 +269,21 @@ I've played around with the suggestion, and I find that setting the cart speed a
 Oh, and in the meantime, I've increased the number of stars to 13.
 
 ------
+
+# But How Many Stars Have I Caught?
+
+It's time to give feedback on the number of stars caught.
+
+Keep in mind that up to this moment we've pinned the stars that got away at the top right corner of the viewport, while making the ones we've caught disappear.
+
+All that is about to change.
+
+We will be making the stars that get away disappear, and pinning the ones we've caught to the left side of the screen.
+
+We're going to stack them one on the other, from the top of the viewport.
+
+------
+
+We're setting the top-right corner of the first caught star to the top-right corner of the viewport.
+
+Then setting the top-right corner of each subsequent catch to the bottom-right corner of the previous catch.
